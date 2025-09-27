@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		else:
 			current_displayed += step * sign(diff)
 
-		$Label.text = "Funding: %d billion $" % current_displayed
+		$Label.text = "$%d billion" % current_displayed
 
 func update_count(new_count: int) -> void:
 	target_count = new_count
