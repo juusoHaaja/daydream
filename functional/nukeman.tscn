@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctn802o00khm1"]
+
+[ext_resource type="Script" uid="uid://dde7dgikcqmm0" path="res://functional/nukeman.gd" id="1_kao2p"]
+[ext_resource type="PackedScene" uid="uid://cu6ogagc2nssi" path="res://functional/rocket.tscn" id="2_r32y0"]
+
+[node name="Nukeman" type="Node2D"]
+script = ExtResource("1_kao2p")
+rocket_prefab = ExtResource("2_r32y0")

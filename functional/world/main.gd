@@ -1,0 +1,13 @@
+extends Node2D
+class_name Main
+
+static var instance;
+
+@onready var canvas = $RedCanvas
+@onready var nuke_man = $Nukeman 
+@onready var water_kill = $WaterKillTexture
+
+func _ready() -> void:
+    instance = self
+    canvas.main = self
+    nuke_man.main = self

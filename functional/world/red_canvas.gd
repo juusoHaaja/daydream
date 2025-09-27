@@ -1,17 +1,32 @@
 extends Node2D
+class_name RedCanvas
 
+var main
+
+var max_points = 100;
 var points = Array();
 var radie = Array();
 
+var centroid = Vector2.ZERO
+
+var border_point = Vector2.ZERO
+
 func _ready() -> void:
-    add_point(Vector2(0, 0))
+    border_point = get_viewport_rect().end
+    add_point($start_node.global_position)
+    pass
 
 func _process(delta: float) -> void:
-    queue_redraw()
+    if points.size() > 0:
+        set_centroid()
+        grow()
+        if points.size() > max_points:
+            reverse_grow()
+        queue_redraw()
 
 func _draw() -> void:
-    for i in range(0, points.size()):
-        var p = points[i]
+    for i in range(points.size()):
+        var p = wrap_point(points[i])
         var r = radie[i]
 
         draw_circle(p, r, Color.RED)
@@ -20,5 +35,43 @@ func add_point(pos):
     points.push_back(pos)
     radie.push_back(10)
 
+func wrap_point(point: Vector2) -> Vector2:
+    var x = fposmod(point.x, border_point.x)
+    var y = fposmod(point.y, border_point.y)
+    return Vector2(x, y)
+
+
 func grow():
-    pass
+    var i = randi_range(0, points.size()-1)
+    var p: Vector2 = points[i]
+
+    var new_p = p+(p-centroid+Vector2.RIGHT).normalized().rotated(randf_range(-1.0, 1.0))*25
+    if main.water_kill.is_pos_in_sea(wrap_point(new_p)):
+        return
+    add_point(new_p)
+
+func reverse_grow():
+    var i = randi_range(0, points.size()-1)
+    points.remove_at(i)
+    radie.remove_at(i)
+
+
+func set_centroid():
+    var sum = Vector2.ZERO
+    for p in points:
+        sum += p
+    centroid = sum / points.size()
+
+func eliminate(pos, radius):
+    var length = points.size() -1;
+    for i in range(length+1):
+        var index = length-i;
+        var p = wrap_point(points[index])
+        if is_point_overlap(pos, radius, p):
+            points.remove_at(index)
+            radie.remove_at(index)
+        
+
+func is_point_overlap(apos: Vector2, ar, bpos: Vector2) -> bool:
+    var dist = apos.distance_to(bpos)
+    return ar >= dist

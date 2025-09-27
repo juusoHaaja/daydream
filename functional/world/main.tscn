@@ -1,8 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtuqbrulfuv2l"]
+[gd_scene load_steps=8 format=3 uid="uid://dtuqbrulfuv2l"]
 
+[ext_resource type="Script" uid="uid://b0p68y5iatr0k" path="res://functional/world/main.gd" id="1_54uvn"]
 [ext_resource type="PackedScene" uid="uid://bmfb0kao6mekx" path="res://functional/world/red_canvas.tscn" id="1_si1jh"]
+[ext_resource type="PackedScene" uid="uid://ctn802o00khm1" path="res://functional/nukeman.tscn" id="2_esplc"]
+[ext_resource type="Texture2D" uid="uid://4durdeirxtaa" path="res://art/uus.webp" id="2_iiaod"]
+[ext_resource type="PackedScene" uid="uid://d2dwwh1j6s5e6" path="res://functional/world/water_kill_texture.tscn" id="2_uv2k3"]
+[ext_resource type="PackedScene" uid="uid://bnrgcyn4mstfe" path="res://functional/nuke_spawn_line.tscn" id="4_tqj8l"]
+[ext_resource type="Script" uid="uid://c1qmnwwuf2brr" path="res://functional/world/nuke_spawn.gd" id="5_uv2k3"]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_54uvn")
+
+[node name="map" type="Sprite2D" parent="."]
+position = Vector2(800, 450)
+texture = ExtResource("2_iiaod")
+
+[node name="WaterKillTexture" parent="." instance=ExtResource("2_uv2k3")]
+visible = false
 
 [node name="RedCanvas" parent="." instance=ExtResource("1_si1jh")]
-position = Vector2(605, 295)
+
+[node name="Nukeman" parent="." node_paths=PackedStringArray("rocker_spawn_point") instance=ExtResource("2_esplc")]
+rocker_spawn_point = NodePath("../nuke_spawn_line/nuke_spawn")
+
+[node name="nuke_spawn_line" parent="." instance=ExtResource("4_tqj8l")]
+
+[node name="nuke_spawn" type="PathFollow2D" parent="nuke_spawn_line"]
+position = Vector2(-6, -173)
+rotation = -0.20836005
+script = ExtResource("5_uv2k3")

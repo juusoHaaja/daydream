@@ -4,3 +4,6 @@
 
 [node name="RedCanvas" type="Node2D"]
 script = ExtResource("1_2balf")
+
+[node name="start_node" type="Node2D" parent="."]
+position = Vector2(796, 186)
