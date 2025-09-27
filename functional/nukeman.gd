@@ -14,26 +14,26 @@ var main
 var mouse_pos = Vector2.ZERO
 
 func _process(delta: float) -> void:
-    if nuke_timer < 0.0:
-        nuke_timer = 0.0
-    else:
-        nuke_timer -= delta
-    handle_input()
+	if nuke_timer < 0.0:
+		nuke_timer = 0.0
+	else:
+		nuke_timer -= delta
+	handle_input()
 
 func handle_input():
-    if Input.is_action_just_pressed("die") and nuke_timer <= 0.0:
-        var rocket = rocket_prefab.instantiate()
-        rocket.global_position = rocker_spawn_point.global_position
-        rocket.target = mouse_pos
-        rocket.nuke_radius = nuke_radius
-        rocket.nuke_speed = nuke_speed * speed_mul
-        rocket.turn_speed = 3.0 * speed_mul
-        rocket.radiation = nuke_radiation
-        main.add_child(rocket)
-        print("Nuke launched at ", mouse_pos)
-        nuke_timer = nuke_cooldown
-        #main.canvas.eliminate(mouse_pos, nuke_radius)
+	if Input.is_action_just_pressed("die") and nuke_timer <= 0.0:
+		var rocket = rocket_prefab.instantiate()
+		rocket.global_position = rocker_spawn_point.global_position
+		rocket.target = mouse_pos
+		rocket.nuke_radius = nuke_radius
+		rocket.nuke_speed = nuke_speed * speed_mul
+		rocket.turn_speed = 3.0 * speed_mul
+		rocket.radiation = nuke_radiation
+		main.add_child(rocket)
+		print("Nuke launched at ", mouse_pos)
+		nuke_timer = nuke_cooldown
+		#main.canvas.eliminate(mouse_pos, nuke_radius)
 
 func _unhandled_input(event: InputEvent) -> void:
-    if event is InputEventMouseMotion:
-        mouse_pos = event.global_position
+	if event is InputEventMouseMotion:
+		mouse_pos = event.global_position
