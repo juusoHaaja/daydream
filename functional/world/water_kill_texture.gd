@@ -18,6 +18,25 @@ func is_pos_in_sea(pos: Vector2) -> bool:
     var col = img.get_pixelv((img.get_size() as Vector2 * uv) as Vector2i)
     return col.g > 0.5
 
+func get_casualities(pos: Vector2, radius: int) -> int:
+    var sum = 0.0;
+    var total = 0;
+    pos /= sprite.scale
+    radius /= sprite.scale.x
+    for y in range(-radius, radius):
+        for x in range(-radius, radius):
+            var offset = Vector2(x, y)
+            if offset.length() <= radius:
+                var px = int(pos.x + x)
+                var py = int(pos.y + y)
+
+                if px >= 0 and py >= 0 and px < image.get_width() and py < image.get_height():
+                    total += 1
+                    if image.get_pixel(px, py).g < 0.5:
+                        sum += 1.0
+    var percentage = sum / total
+    return int(pow(radius, 2.0)*123 * percentage)
+                        
 
 
 func paint_circle(pos: Vector2, radius: int, color: Color):

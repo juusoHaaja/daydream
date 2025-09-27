@@ -6,14 +6,24 @@ var nuke_speed = 100.0;
 var turn_speed = 3.0;
 var target = Vector2.ZERO
 
+static var target_scale = 0.07;
+
 @onready var sprite = $Sprite2D
 @export var boom_prefab: PackedScene;
+@export var target_marker_prefab: PackedScene;
+
+var target_marker: Sprite2D
 
 func _ready() -> void:
     rotation = (target - global_position).rotated(PI+randf_range(-1.0, 1.0)).angle()
+    target_marker = target_marker_prefab.instantiate() as Sprite2D
+    target_marker.global_position = target
+    target_marker.scale = Vector2.ONE * 0.01
+    get_parent().add_child(target_marker)
 
 func _process(delta: float) -> void:
     sprite.scale *= 1-0.3 * delta;
+    target_marker.scale = lerp(target_marker.scale, Vector2.ONE * target_scale, 0.2)
 
     var dir = (target - global_position).normalized()
     var angle_diff = dir.angle_to(global_transform.x)
@@ -37,9 +47,8 @@ func explode():
     #print(Main.instance.kill_count, " killed")
     Main.instance.update_kill_count()
     Main.instance.water_kill.paint_circle(target, int(nuke_radius), Color(0, 1, 0, 0.25))
+    target_marker.queue_free()
     queue_free()
 
 func get_kills() -> int:
-    if Main.instance.water_kill.is_pos_in_sea(target):
-        return 0
-    return int(pow(nuke_radius, 2.0))*123
+    return Main.instance.water_kill.get_casualities(target, int(nuke_radius))
