@@ -7,6 +7,7 @@ var turn_speed = 3.0;
 var target = Vector2.ZERO
 
 @onready var sprite = $Sprite2D
+@export var boom_prefab: PackedScene;
 
 func _ready() -> void:
     rotation = (target - global_position).rotated(PI+randf_range(-1.0, 1.0)).angle()
@@ -29,4 +30,7 @@ func _process(delta: float) -> void:
 
 func explode():
     Main.instance.canvas.eliminate(target, nuke_radius)
+    var boom = boom_prefab.instantiate()
+    boom.global_position = target
+    Main.instance.add_child(boom)
     queue_free()

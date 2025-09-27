@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cu6ogagc2nssi"]
+[gd_scene load_steps=7 format=3 uid="uid://cu6ogagc2nssi"]
 
 [ext_resource type="Script" uid="uid://c3dqgttxrwxt5" path="res://functional/rocket.gd" id="1_thj0r"]
+[ext_resource type="PackedScene" uid="uid://danj52cryyb2u" path="res://functional/explosion.tscn" id="2_8yxdy"]
 [ext_resource type="Texture2D" uid="uid://chber8xmynl56" path="res://art/Nuke1.webp" id="2_ainx2"]
 [ext_resource type="Texture2D" uid="uid://c1c17iovbn3oc" path="res://art/Nuke2.webp" id="3_8yxdy"]
 [ext_resource type="Texture2D" uid="uid://dg67s4xd28836" path="res://art/Nuke3.webp" id="4_ict0f"]
@@ -19,12 +20,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [node name="rocket" type="Node2D"]
 script = ExtResource("1_thj0r")
+boom_prefab = ExtResource("2_8yxdy")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.43, 0.43)
 sprite_frames = SubResource("SpriteFrames_p82w4")
+autoplay = "default"
