@@ -1,5 +1,6 @@
 extends Node2D
 
+var radiation = false;
 var nuke_radius = 45.0;
 
 var nuke_speed = 100.0;
@@ -43,10 +44,17 @@ func explode():
     var boom = boom_prefab.instantiate()
     boom.global_position = target
     Main.instance.add_child(boom)
-    Main.instance.kill_count += get_kills()
+    var kills =  get_kills()
+    Main.instance.kill_count += kills;
     #print(Main.instance.kill_count, " killed")
     Main.instance.update_kill_count()
-    Main.instance.water_kill.paint_circle(target, int(nuke_radius), Color(0, 1, 0, 0.25))
+    if radiation:
+        Main.instance.water_kill.paint_circle(target, int(nuke_radius), Color(0, 1, 0, 0.25))
+    
+    Main.instance.population -= kills
+    if Main.instance.population < 0:
+        Main.instance.population = 0
+
     target_marker.queue_free()
     queue_free()
 

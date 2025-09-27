@@ -1,5 +1,8 @@
 extends Node2D
 
+var population_density = 22000;
+var land_pixels = 374734
+
 @onready var sprite = $Sprite2D
 var image: Image;
 
@@ -19,6 +22,8 @@ func is_pos_in_sea(pos: Vector2) -> bool:
     return col.g > 0.5
 
 func get_casualities(pos: Vector2, radius: int) -> int:
+    calculate_density()
+
     var sum = 0.0;
     var total = 0;
     pos /= sprite.scale
@@ -35,8 +40,10 @@ func get_casualities(pos: Vector2, radius: int) -> int:
                     if image.get_pixel(px, py).g < 0.5:
                         sum += 1.0
     var percentage = sum / total
-    return int(22015 * sum)
+    return int(population_density * sum)
                         
+func calculate_density():
+    population_density = Main.instance.population / land_pixels
 
 
 func paint_circle(pos: Vector2, radius: int, color: Color):
@@ -51,5 +58,6 @@ func paint_circle(pos: Vector2, radius: int, color: Color):
 
                 if px >= 0 and py >= 0 and px < image.get_width() and py < image.get_height():
                     image.set_pixel(px, py, color)
+                    land_pixels -= 1
 
     sprite.texture = ImageTexture.create_from_image(image) # send updated image to GPU
