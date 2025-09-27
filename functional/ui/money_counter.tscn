@@ -1,20 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://duxr2v3p6mdgh"]
+[gd_scene load_steps=3 format=3 uid="uid://d37gntiuik0vx"]
 
 [ext_resource type="Script" uid="uid://ksx61gns6b5l" path="res://functional/ui/money_counter.gd" id="1_qotrx"]
+[ext_resource type="Texture2D" uid="uid://2os5gwp5o3nw" path="res://art/Dollar.png" id="2_dt248"]
 
-[node name="MoneyCounter" type="Control"]
+[node name="MoneyCounter" type="HBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 291.0
+offset_bottom = 50.0
 script = ExtResource("1_qotrx")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_top = 22
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_dt248")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(0, 50)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Funding: 0 billion $"
 horizontal_alignment = 1
