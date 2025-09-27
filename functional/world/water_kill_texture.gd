@@ -3,7 +3,6 @@ extends Node2D
 @onready var sprite = $Sprite2D
 
 func is_pos_in_sea(pos: Vector2) -> bool:
-    return false
     var tex = sprite.texture
     if tex == null:
         return false
