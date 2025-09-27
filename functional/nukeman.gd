@@ -3,6 +3,7 @@ extends Node2D
 @export var rocket_prefab: PackedScene;
 @export var rocker_spawn_point: Node2D;
 
+var nuke_radiation = false;
 var nuke_radius = 45.0;
 var nuke_speed = 400.0;
 var speed_mul = 2.0;
@@ -27,6 +28,7 @@ func handle_input():
 		rocket.nuke_radius = nuke_radius
 		rocket.nuke_speed = nuke_speed * speed_mul
 		rocket.turn_speed = 3.0 * speed_mul
+		rocket.radiation = nuke_radiation
 		main.add_child(rocket)
 		print("Nuke launched at ", mouse_pos)
 		nuke_timer = nuke_cooldown
