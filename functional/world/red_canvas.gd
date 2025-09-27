@@ -83,3 +83,6 @@ func eliminate(pos, radius):
 func is_point_overlap(apos: Vector2, ar, bpos: Vector2) -> bool:
 	var dist = apos.distance_to(bpos)
 	return ar >= dist
+
+func get_infection_count () -> int:
+	return points.size()
