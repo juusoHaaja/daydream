@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8g5d8s8v7a0t"]
+[gd_scene load_steps=2 format=3 uid="uid://ct1im0ouyogks"]
 
-[ext_resource type="Texture2D" uid="uid://cbto2chkc8ab3" path="res://art/Crosshair.png" id="1_h8pi4"]
+[ext_resource type="Texture2D" uid="uid://ow6e36lvisaa" path="res://art/Cursor_big.png" id="1_h8pi4"]
 
 [node name="TargetMarker" type="Sprite2D"]
 scale = Vector2(0.07, 0.07)

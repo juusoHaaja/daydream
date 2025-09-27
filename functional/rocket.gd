@@ -7,7 +7,7 @@ var nuke_speed = 100.0;
 var turn_speed = 3.0;
 var target = Vector2.ZERO
 
-static var target_scale = 0.07;
+static var target_scale = 0.5;
 
 @onready var sprite = $Sprite2D
 @export var boom_prefab: PackedScene;
@@ -24,7 +24,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
     sprite.scale *= 1-0.3 * delta;
-    target_marker.scale = lerp(target_marker.scale, Vector2.ONE * target_scale, 0.2)
+    target_marker.scale = lerp(target_marker.scale, Vector2.ONE * target_scale, 0.05)
 
     var dir = (target - global_position).normalized()
     var angle_diff = dir.angle_to(global_transform.x)
