@@ -1,18 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://be7nsec2al8t1"]
+[gd_scene load_steps=3 format=3 uid="uid://be7nsec2al8t1"]
 
 [ext_resource type="Script" uid="uid://d01x1wov2ttcx" path="res://functional/ui/kill_count.gd" id="1_3xiki"]
+[ext_resource type="Texture2D" uid="uid://cfx5drmtxbyxg" path="res://art/skull.png" id="2_patle"]
 
-[node name="KillCount" type="Control"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 3
-anchors_preset = 0
+[node name="KillCount" type="HBoxContainer"]
+offset_right = 248.0
+offset_bottom = 50.0
+theme_override_constants/separation = 12
 script = ExtResource("1_3xiki")
 
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_patle")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="Label" type="Label" parent="."]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Casualties: 0"
 horizontal_alignment = 1
