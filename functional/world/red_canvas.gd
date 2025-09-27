@@ -11,12 +11,20 @@ var centroid = Vector2.ZERO
 
 var border_point = Vector2.ZERO
 
+var grow_frequency = 60.0;
+var grow_interval = 1.0 / grow_frequency
+var grow_timer = 0.0;
+
 func _ready() -> void:
     border_point = get_viewport_rect().end
     add_point($start_node.global_position)
     pass
 
 func _process(delta: float) -> void:
+    grow_timer += delta;
+    if grow_timer < grow_interval:
+        return
+    grow_timer -= grow_interval
     if points.size() > 0:
         set_centroid()
         grow()

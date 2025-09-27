@@ -5,7 +5,7 @@ extends Node2D
 
 var nuke_radius = 45.0;
 var nuke_speed = 400.0;
-var speed_mul = 1.0;
+var speed_mul = 2.0;
 var nuke_cooldown = 0.2; #seconds
 var nuke_timer = 0.0;
 

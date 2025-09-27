@@ -21,10 +21,10 @@ func _process(delta: float) -> void:
     global_position += global_transform.x * nuke_speed * delta
     #print("Rocket at ", global_position, " heading to ", target)
 
-    if global_position.distance_to(target) < 100.0:
+    if global_position.distance_to(target) < 300.0:
         turn_speed *= 1.05
 
-    if global_position.distance_to(target) < 20.0:
+    if global_position.distance_to(target) < 50.0:
         explode()
 
 func explode():
