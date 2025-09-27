@@ -9,6 +9,7 @@ static var instance;
 @onready var killcount = $GUI/MarginContainer/KillCount
 
 var kill_count = 0;
+var population = 8240000000
 
 func _ready() -> void:
 	instance = self
