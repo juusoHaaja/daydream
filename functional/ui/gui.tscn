@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm8tjvjkdj7oy"]
+
+[ext_resource type="PackedScene" uid="uid://be7nsec2al8t1" path="res://functional/ui/kill_count.tscn" id="1_7sleg"]
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="KillCount" parent="MarginContainer" instance=ExtResource("1_7sleg")]
+layout_mode = 2

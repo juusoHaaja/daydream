@@ -1,6 +1,10 @@
 extends Node2D
 
 @onready var sprite = $Sprite2D
+var image: Image;
+
+func _ready() -> void:
+    image = sprite.texture.get_image()
 
 func is_pos_in_sea(pos: Vector2) -> bool:
     var tex = sprite.texture
@@ -12,4 +16,21 @@ func is_pos_in_sea(pos: Vector2) -> bool:
         return false
     var img = tex.get_image()
     var col = img.get_pixelv((img.get_size() as Vector2 * uv) as Vector2i)
-    return col.a > 0.5
+    return col.g > 0.5
+
+
+
+func paint_circle(pos: Vector2, radius: int, color: Color):
+    pos /= sprite.scale
+    radius /= sprite.scale.x
+    for y in range(-radius, radius):
+        for x in range(-radius, radius):
+            var offset = Vector2(x, y)
+            if offset.length() <= radius:
+                var px = int(pos.x + x)
+                var py = int(pos.y + y)
+
+                if px >= 0 and py >= 0 and px < image.get_width() and py < image.get_height():
+                    image.set_pixel(px, py, color)
+
+    sprite.texture = ImageTexture.create_from_image(image) # send updated image to GPU

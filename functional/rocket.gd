@@ -33,4 +33,13 @@ func explode():
     var boom = boom_prefab.instantiate()
     boom.global_position = target
     Main.instance.add_child(boom)
+    Main.instance.kill_count += get_kills()
+    #print(Main.instance.kill_count, " killed")
+    Main.instance.update_kill_count()
+    Main.instance.water_kill.paint_circle(target, int(nuke_radius), Color(0, 1, 0, 0.25))
     queue_free()
+
+func get_kills() -> int:
+    if Main.instance.water_kill.is_pos_in_sea(target):
+        return 0
+    return int(pow(nuke_radius, 2.0))*123
