@@ -8,6 +8,6 @@ static var instance;
 @onready var water_kill = $WaterKillTexture
 
 func _ready() -> void:
-    instance = self
-    canvas.main = self
-    nuke_man.main = self
+	instance = self
+	canvas.main = self
+	nuke_man.main = self
