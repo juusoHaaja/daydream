@@ -17,4 +17,4 @@ func _ready() -> void:
 	nuke_man.main = self
 
 func update_kill_count():
-	killcount.update_count(kill_count)
+	killcount.update_count(population)
