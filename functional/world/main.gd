@@ -11,9 +11,9 @@ static var instance;
 var kill_count = 0;
 
 func _ready() -> void:
-    instance = self
-    canvas.main = self
-    nuke_man.main = self
+	instance = self
+	canvas.main = self
+	nuke_man.main = self
 
 func update_kill_count():
-    killcount.update_count(kill_count)
+	killcount.update_count(kill_count)
