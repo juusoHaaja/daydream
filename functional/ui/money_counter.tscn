@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://duxr2v3p6mdgh"]
+
+[ext_resource type="Script" uid="uid://ksx61gns6b5l" path="res://functional/ui/money_counter.gd" id="1_qotrx"]
+
+[node name="MoneyCounter" type="Control"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_qotrx")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "Funding: 0 billion $"
+horizontal_alignment = 1
+vertical_alignment = 1
