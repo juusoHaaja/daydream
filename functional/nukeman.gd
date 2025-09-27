@@ -3,7 +3,7 @@ extends Node2D
 @export var rocket_prefab: PackedScene;
 @export var rocker_spawn_point: Node2D;
 
-var nuke_radius = 45.0;
+var nuke_radius = 4500.0;
 var nuke_speed = 400.0;
 var speed_mul = 2.0;
 var nuke_cooldown = 0.2; #seconds

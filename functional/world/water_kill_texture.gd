@@ -35,7 +35,7 @@ func get_casualities(pos: Vector2, radius: int) -> int:
                     if image.get_pixel(px, py).g < 0.5:
                         sum += 1.0
     var percentage = sum / total
-    return int(pow(radius, 2.0)*123 * percentage)
+    return int(22015 * sum)
                         
 
 
