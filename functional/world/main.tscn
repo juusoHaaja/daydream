@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b0p68y5iatr0k" path="res://functional/world/main.gd" id="1_54uvn"]
 [ext_resource type="PackedScene" uid="uid://bmfb0kao6mekx" path="res://functional/world/red_canvas.tscn" id="1_si1jh"]
 [ext_resource type="PackedScene" uid="uid://ctn802o00khm1" path="res://functional/nukeman.tscn" id="2_esplc"]
-[ext_resource type="Texture2D" uid="uid://4durdeirxtaa" path="res://art/uus.webp" id="2_iiaod"]
+[ext_resource type="Texture2D" uid="uid://4durdeirxtaa" path="res://art/map.webp" id="2_iiaod"]
 [ext_resource type="PackedScene" uid="uid://d2dwwh1j6s5e6" path="res://functional/world/water_kill_texture.tscn" id="2_uv2k3"]
 [ext_resource type="PackedScene" uid="uid://bnrgcyn4mstfe" path="res://functional/nuke_spawn_line.tscn" id="4_tqj8l"]
 [ext_resource type="Script" uid="uid://c1qmnwwuf2brr" path="res://functional/world/nuke_spawn.gd" id="5_uv2k3"]

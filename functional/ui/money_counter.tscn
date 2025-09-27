@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d37gntiuik0vx"]
 
 [ext_resource type="Script" uid="uid://ksx61gns6b5l" path="res://functional/ui/money_counter.gd" id="1_qotrx"]
-[ext_resource type="Texture2D" uid="uid://2os5gwp5o3nw" path="res://art/Dollar.png" id="2_dt248"]
+[ext_resource type="Texture2D" uid="uid://2os5gwp5o3nw" path="res://art/dollar.png" id="2_dt248"]
 
 [node name="MoneyCounter" type="HBoxContainer"]
 custom_minimum_size = Vector2(0, 50)

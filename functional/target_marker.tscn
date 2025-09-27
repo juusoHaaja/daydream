@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ec5av36b8qem"]
 
-[ext_resource type="Texture2D" uid="uid://ow6e36lvisaa" path="res://art/Cursor_big.png" id="1_h8pi4"]
+[ext_resource type="Texture2D" uid="uid://ow6e36lvisaa" path="res://art/nuclear_indicator.png" id="1_h8pi4"]
 
 [node name="TargetMarker" type="Sprite2D"]
 scale = Vector2(0.07, 0.07)

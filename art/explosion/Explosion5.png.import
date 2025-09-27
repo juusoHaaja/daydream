@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2os5gwp5o3nw"
-path="res://.godot/imported/dollar.png-add95eb4c0ee43932e82a041deaffd2b.ctex"
+uid="uid://cv7gf72vgywbq"
+path="res://.godot/imported/Explosion5.png-3adfdbddb0d6977ae07acbe9c1867b66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/dollar.png"
-dest_files=["res://.godot/imported/dollar.png-add95eb4c0ee43932e82a041deaffd2b.ctex"]
+source_file="res://art/explosion/Explosion5.png"
+dest_files=["res://.godot/imported/Explosion5.png-3adfdbddb0d6977ae07acbe9c1867b66.ctex"]
 
 [params]
 

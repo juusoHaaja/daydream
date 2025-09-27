@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2os5gwp5o3nw"
-path="res://.godot/imported/dollar.png-add95eb4c0ee43932e82a041deaffd2b.ctex"
+uid="uid://dlw3frn1ip1r6"
+path="res://.godot/imported/crosshair_idle.png-14f41138dbd3cfde743917addcf8280a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/dollar.png"
-dest_files=["res://.godot/imported/dollar.png-add95eb4c0ee43932e82a041deaffd2b.ctex"]
+source_file="res://art/crosshair/crosshair_idle.png"
+dest_files=["res://.godot/imported/crosshair_idle.png-14f41138dbd3cfde743917addcf8280a.ctex"]
 
 [params]
 

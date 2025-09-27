@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2os5gwp5o3nw"
-path="res://.godot/imported/dollar.png-add95eb4c0ee43932e82a041deaffd2b.ctex"
+uid="uid://chber8xmynl56"
+path="res://.godot/imported/Nuke1.webp-9b6531681b472c72e2d4631a346cc959.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/dollar.png"
-dest_files=["res://.godot/imported/dollar.png-add95eb4c0ee43932e82a041deaffd2b.ctex"]
+source_file="res://art/nuke/Nuke1.webp"
+dest_files=["res://.godot/imported/Nuke1.webp-9b6531681b472c72e2d4631a346cc959.ctex"]
 
 [params]
 

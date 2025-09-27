@@ -18,6 +18,7 @@ func _ready() -> void:
 	instance = self
 	canvas.main = self
 	nuke_man.main = self
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN) # hide cursor
 
 func update_kill_count():
 	killcount.update_count(kill_count)
