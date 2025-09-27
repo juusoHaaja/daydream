@@ -3,11 +3,13 @@
 [ext_resource type="Script" uid="uid://d01x1wov2ttcx" path="res://functional/ui/kill_count.gd" id="1_3xiki"]
 
 [node name="KillCount" type="Control"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_3xiki")
 
 [node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
