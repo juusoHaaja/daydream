@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmfb0kao6mekx"]
+
+[ext_resource type="Script" uid="uid://c53s5htgpvmfn" path="res://functional/world/red_canvas.gd" id="1_2balf"]
+
+[node name="RedCanvas" type="Node2D"]
+script = ExtResource("1_2balf")

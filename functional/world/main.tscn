@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://dtuqbrulfuv2l"]
+[gd_scene load_steps=2 format=3 uid="uid://dtuqbrulfuv2l"]
+
+[ext_resource type="PackedScene" uid="uid://bmfb0kao6mekx" path="res://functional/world/red_canvas.tscn" id="1_si1jh"]
 
 [node name="main" type="Node2D"]
+
+[node name="RedCanvas" parent="." instance=ExtResource("1_si1jh")]
+position = Vector2(605, 295)
