@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtuqbrulfuv2l"]
+[gd_scene load_steps=10 format=3 uid="uid://dtuqbrulfuv2l"]
 
 [ext_resource type="Script" uid="uid://b0p68y5iatr0k" path="res://functional/world/main.gd" id="1_54uvn"]
 [ext_resource type="PackedScene" uid="uid://bmfb0kao6mekx" path="res://functional/world/red_canvas.tscn" id="1_si1jh"]
 [ext_resource type="PackedScene" uid="uid://ctn802o00khm1" path="res://functional/nukeman.tscn" id="2_esplc"]
 [ext_resource type="Texture2D" uid="uid://4durdeirxtaa" path="res://art/map.webp" id="2_iiaod"]
+[ext_resource type="AudioStream" uid="uid://dg55p1vaopaic" path="res://audio/music.ogg" id="2_moetd"]
 [ext_resource type="PackedScene" uid="uid://d2dwwh1j6s5e6" path="res://functional/world/water_kill_texture.tscn" id="2_uv2k3"]
 [ext_resource type="PackedScene" uid="uid://bnrgcyn4mstfe" path="res://functional/nuke_spawn_line.tscn" id="4_tqj8l"]
 [ext_resource type="Script" uid="uid://c1qmnwwuf2brr" path="res://functional/world/nuke_spawn.gd" id="5_uv2k3"]
@@ -11,6 +12,11 @@
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_54uvn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_moetd")
+autoplay = true
+parameters/looping = true
 
 [node name="map" type="Sprite2D" parent="."]
 position = Vector2(800, 450)
