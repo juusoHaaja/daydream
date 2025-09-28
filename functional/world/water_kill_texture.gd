@@ -57,7 +57,7 @@ func paint_circle(pos: Vector2, radius: int, color: Color):
                 var py = int(pos.y + y)
 
                 if px >= 0 and py >= 0 and px < image.get_width() and py < image.get_height():
-                    if image.get_pixel(px, py).g > 0.5:
+                    if image.get_pixel(px, py).g < 0.5:
                         land_pixels -= 1
                     image.set_pixel(px, py, color)
 
