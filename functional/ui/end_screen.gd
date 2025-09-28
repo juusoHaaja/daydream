@@ -11,7 +11,7 @@ func on_play_button_pressed() -> void:
 
 func display_stats():
     var main = Main.instance
-    stat_slabel.text = "Casualities: " + format_with_commas(main.kill_count) + "\n" + "Outbreaks neutralized: " + format_with_commas(main.canvas.infected_kills) + "\n" + "Population: " + format_with_commas(main.population)
+    stat_slabel.text = "But at what cost...\nCasualities: " + format_with_commas(main.kill_count) + "\n" + "Outbreaks neutralized: " + format_with_commas(main.canvas.infected_kills) + "\n" + "Population: " + format_with_commas(main.population)
 
 func format_with_commas(n: int) -> String:
     var s = str(abs(n))

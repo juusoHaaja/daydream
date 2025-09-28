@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
         if abs(current_displayed - target_count) < snap_threshold:
             current_displayed = float(target_count)
 
-        $Label.text = "%s deaths" % format_with_commas(int(current_displayed))
+        $Label.text = "%s" % format_with_commas(int(current_displayed))
 
 func update_count(new_count: int) -> void:
     target_count = new_count
