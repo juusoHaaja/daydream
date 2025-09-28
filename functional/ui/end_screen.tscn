@@ -1,10 +1,17 @@
-[gd_scene format=3 uid="uid://bjgn8fs8dvbhs"]
+[gd_scene load_steps=2 format=3 uid="uid://bjgn8fs8dvbhs"]
+
+[ext_resource type="Script" uid="uid://bflb70ql8koos" path="res://functional/ui/end_screen.gd" id="1_oxg00"]
 
 [node name="EndScreen" type="CanvasLayer"]
+script = ExtResource("1_oxg00")
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+self_modulate = Color(1, 1, 1, 0.7019608)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]
 layout_mode = 1
@@ -13,10 +20,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 646.0
-offset_top = 310.0
-offset_right = 914.0
-offset_bottom = 550.0
+offset_left = -410.0
+offset_top = -120.0
+offset_right = 410.0
+offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 20
@@ -31,10 +38,10 @@ size_flags_horizontal = 4
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 90
-text = "TITLE"
+text = "Plague Eliminated"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 46
-text = "PLAY"
+text = "Restart"

@@ -10,6 +10,8 @@ static var instance;
 @onready var killcount = $GUI/MarginContainer/VBoxContainer/KillCount
 @onready var money_count = $GUI/MarginContainer/VBoxContainer/MoneyCounter
 
+@onready var end_screen = $EndScreen
+
 var kill_count = 0;
 var population = 8240000000
 
@@ -26,3 +28,6 @@ func update_kill_count():
 
 func update_money_count():
     money_count.update_count(money)
+
+func set_end_screen():
+    end_screen.visible = true

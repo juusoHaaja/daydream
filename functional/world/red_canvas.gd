@@ -32,7 +32,9 @@ func _process(delta: float) -> void:
         grow()
         if points.size() > max_points:
             reverse_grow()
-        queue_redraw()
+    if points.size() <= 0:
+        Main.instance.set_end_screen()
+    queue_redraw()
 
 func _draw() -> void:
     for i in range(points.size()):
