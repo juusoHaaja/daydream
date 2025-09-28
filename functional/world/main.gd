@@ -30,4 +30,5 @@ func update_money_count():
     money_count.update_count(money)
 
 func set_end_screen():
+    end_screen.display_stats()
     end_screen.visible = true
