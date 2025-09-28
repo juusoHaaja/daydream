@@ -1,20 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bm8tjvjkdj7oy"]
+[gd_scene load_steps=4 format=3 uid="uid://bm8tjvjkdj7oy"]
 
 [ext_resource type="PackedScene" uid="uid://be7nsec2al8t1" path="res://functional/ui/kill_count.tscn" id="1_7sleg"]
-[ext_resource type="Texture2D" uid="uid://dlw3frn1ip1r6" path="res://art/crosshair/crosshair_idle.png" id="1_oncy6"]
 [ext_resource type="PackedScene" uid="uid://d37gntiuik0vx" path="res://functional/ui/money_counter.tscn" id="2_m3a62"]
-[ext_resource type="Script" uid="uid://bsrqs24hpr851" path="res://functional/ui/cursor.gd" id="2_vi246"]
-[ext_resource type="Texture2D" uid="uid://c447owvauu6im" path="res://art/crosshair/crosshair_clicked.png" id="3_ul23c"]
+[ext_resource type="PackedScene" uid="uid://dctsmudp843nh" path="res://functional/ui/shop.tscn" id="4_vi246"]
 
 [node name="GUI" type="CanvasLayer"]
-
-[node name="CursorLayer" type="CanvasLayer" parent="."]
-
-[node name="Cursor" type="Sprite2D" parent="CursorLayer"]
-texture = ExtResource("1_oncy6")
-script = ExtResource("2_vi246")
-idle_texture = ExtResource("1_oncy6")
-clicked_texture = ExtResource("3_ul23c")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_right = 40.0
@@ -31,4 +21,28 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="MoneyCounter" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_m3a62")]
+layout_mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -592.0
+offset_right = 148.0
+grow_vertical = 0
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Shop" parent="CanvasLayer/VBoxContainer/HBoxContainer/MarginContainer" instance=ExtResource("4_vi246")]
 layout_mode = 2

@@ -6,8 +6,8 @@ extends Node2D
 var nuke_radiation = false;
 var nuke_radius = 45.0;
 var nuke_speed = 400.0;
-var speed_mul = 2.0;
-var nuke_cooldown = 0.2; #seconds
+var speed_mul = 1.0;
+var nuke_cooldown = 0.5; #seconds
 var nuke_timer = 0.0;
 
 var main
@@ -18,22 +18,29 @@ func _process(delta: float) -> void:
         nuke_timer = 0.0
     else:
         nuke_timer -= delta
-    handle_input()
+    #handle_input()
 
-func handle_input():
-    if Input.is_action_just_pressed("die") and nuke_timer <= 0.0:
-        var rocket = rocket_prefab.instantiate()
-        rocket.global_position = rocker_spawn_point.global_position
-        rocket.target = mouse_pos
-        rocket.nuke_radius = nuke_radius
-        rocket.nuke_speed = nuke_speed * speed_mul
-        rocket.turn_speed = 3.0 * speed_mul
-        rocket.radiation = nuke_radiation
-        main.add_child(rocket)
-        print("Nuke launched at ", mouse_pos)
-        nuke_timer = nuke_cooldown
-        #main.canvas.eliminate(mouse_pos, nuke_radius)
+#func handle_input():
+    #if Input.is_action_just_pressed("die") and nuke_timer <= 0.0:
+        
 
 func _unhandled_input(event: InputEvent) -> void:
     if event is InputEventMouseMotion:
         mouse_pos = event.global_position
+    elif event is InputEventMouseButton:
+        if event.button_index == MOUSE_BUTTON_LEFT and nuke_timer <= 0.0:
+            spawn_nuke()
+
+
+func spawn_nuke():
+    var rocket = rocket_prefab.instantiate()
+    rocket.global_position = rocker_spawn_point.global_position
+    rocket.target = mouse_pos
+    rocket.nuke_radius = nuke_radius
+    rocket.nuke_speed = nuke_speed * speed_mul
+    rocket.turn_speed = 3.0 * speed_mul
+    rocket.radiation = nuke_radiation
+    main.add_child(rocket)
+    print("Nuke launched at ", mouse_pos)
+    nuke_timer = nuke_cooldown
+    #main.canvas.eliminate(mouse_pos, nuke_radius)
