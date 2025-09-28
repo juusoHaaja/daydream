@@ -66,6 +66,9 @@ func grow():
     add_point(new_p)
 
 func reverse_grow():
+    Main.instance.population -= 10000
+    Main.instance.kill_count += 10000
+    Main.instance.update_kill_count()
     var i = randi_range(0, points.size()-1)
     points.remove_at(i)
     radie.remove_at(i)
