@@ -1,20 +1,49 @@
-[gd_scene load_steps=2 format=3 uid="uid://dctsmudp843nh"]
+[gd_scene load_steps=6 format=3 uid="uid://dctsmudp843nh"]
 
 [ext_resource type="PackedScene" uid="uid://bwk0lvjowpjqb" path="res://functional/ui/shop_item.tscn" id="1_yoksi"]
+[ext_resource type="Texture2D" uid="uid://bt3j1w2rb6cpb" path="res://art/Upgrade buttons/Radius.png" id="2_t7hnx"]
+[ext_resource type="Texture2D" uid="uid://51qxjpggguuy" path="res://art/Upgrade buttons/Fire speed.png" id="3_2bwli"]
+[ext_resource type="Texture2D" uid="uid://hwigk456brx8" path="res://art/Upgrade buttons/Missile speed.png" id="4_oohjf"]
+[ext_resource type="Texture2D" uid="uid://b4kt1jgua7e4d" path="res://art/Upgrade buttons/Radiation.png" id="5_e4met"]
 
 [node name="Shop" type="VBoxContainer"]
 
 [node name="ShopItem" parent="." instance=ExtResource("1_yoksi")]
 layout_mode = 2
 
+[node name="Button" parent="ShopItem/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(100, 100)
+icon = ExtResource("2_t7hnx")
+expand_icon = true
+
 [node name="ShopItem2" parent="." instance=ExtResource("1_yoksi")]
 layout_mode = 2
 upgrade_index = 1
+
+[node name="Button" parent="ShopItem2/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(100, 100)
+icon = ExtResource("3_2bwli")
+expand_icon = true
 
 [node name="ShopItem3" parent="." instance=ExtResource("1_yoksi")]
 layout_mode = 2
 upgrade_index = 2
 
+[node name="Button" parent="ShopItem3/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(100, 100)
+icon = ExtResource("4_oohjf")
+expand_icon = true
+
 [node name="ShopItem4" parent="." instance=ExtResource("1_yoksi")]
 layout_mode = 2
 upgrade_index = 3
+
+[node name="Button" parent="ShopItem4/VBoxContainer" index="0"]
+custom_minimum_size = Vector2(100, 100)
+icon = ExtResource("5_e4met")
+expand_icon = true
+
+[editable path="ShopItem"]
+[editable path="ShopItem2"]
+[editable path="ShopItem3"]
+[editable path="ShopItem4"]
