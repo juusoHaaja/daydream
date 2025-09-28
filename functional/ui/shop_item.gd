@@ -18,7 +18,7 @@ func _ready() -> void:
         2:
             price = 68100000000
         3:
-            price = 329500000000
+            price = 829500000000
             one_off = true
     
     label.text =  "$" + format_with_commas(price)

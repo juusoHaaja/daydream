@@ -54,6 +54,9 @@ func wrap_point(point: Vector2) -> Vector2:
 func grow():
     var i = randi_range(0, points.size()-1)
     var p: Vector2 = points[i]
+    if randi_range(0, 100) == 69:
+        Main.instance.plane_manager.spawn_plane(p)
+        return
 
     var new_p = p+(p-centroid+Vector2.RIGHT).normalized().rotated(randf_range(-1.0, 1.0))*25
     if main.water_kill.is_pos_in_sea(wrap_point(new_p)):

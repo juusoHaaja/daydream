@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://6tff4mngj2ic"]
+
+[ext_resource type="Script" uid="uid://nxxgcbegs1bh" path="res://functional/world/plane_manager.gd" id="1_hlvv0"]
+
+[node name="PlaneManager" type="Node2D"]
+script = ExtResource("1_hlvv0")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(408, 292)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(1439, 714)
+
+[node name="Node2D3" type="Node2D" parent="."]
+position = Vector2(780, 265)
+
+[node name="Node2D4" type="Node2D" parent="."]
+position = Vector2(1234, 345)
+
+[node name="Node2D5" type="Node2D" parent="."]
+position = Vector2(863, 704)
+
+[node name="Node2D6" type="Node2D" parent="."]
+position = Vector2(492, 716)

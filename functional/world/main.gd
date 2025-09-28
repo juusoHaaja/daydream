@@ -6,6 +6,7 @@ static var instance;
 @onready var canvas = $RedCanvas
 @onready var nuke_man = $Nukeman 
 @onready var water_kill = $WaterKillTexture
+@onready var plane_manager = $PlaneManager
 @onready var killcount = $GUI/MarginContainer/VBoxContainer/KillCount
 @onready var money_count = $GUI/MarginContainer/VBoxContainer/MoneyCounter
 

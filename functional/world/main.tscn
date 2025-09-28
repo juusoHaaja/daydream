@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtuqbrulfuv2l"]
+[gd_scene load_steps=11 format=3 uid="uid://dtuqbrulfuv2l"]
 
 [ext_resource type="Script" uid="uid://b0p68y5iatr0k" path="res://functional/world/main.gd" id="1_54uvn"]
 [ext_resource type="PackedScene" uid="uid://bmfb0kao6mekx" path="res://functional/world/red_canvas.tscn" id="1_si1jh"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://d2dwwh1j6s5e6" path="res://functional/world/water_kill_texture.tscn" id="2_uv2k3"]
 [ext_resource type="PackedScene" uid="uid://bnrgcyn4mstfe" path="res://functional/nuke_spawn_line.tscn" id="4_tqj8l"]
 [ext_resource type="Script" uid="uid://c1qmnwwuf2brr" path="res://functional/world/nuke_spawn.gd" id="5_uv2k3"]
+[ext_resource type="PackedScene" uid="uid://6tff4mngj2ic" path="res://functional/world/plane_manager.tscn" id="6_moetd"]
+[ext_resource type="PackedScene" uid="uid://c2i1iae777h0q" path="res://functional/plane.tscn" id="7_1ryfq"]
 [ext_resource type="PackedScene" uid="uid://bm8tjvjkdj7oy" path="res://functional/ui/gui.tscn" id="8_012om"]
 
 [node name="main" type="Node2D"]
@@ -22,6 +24,9 @@ texture = ExtResource("2_iiaod")
 
 [node name="Nukeman" parent="." node_paths=PackedStringArray("rocker_spawn_point") instance=ExtResource("2_esplc")]
 rocker_spawn_point = NodePath("../nuke_spawn_line/nuke_spawn")
+
+[node name="PlaneManager" parent="." instance=ExtResource("6_moetd")]
+plane_prefab = ExtResource("7_1ryfq")
 
 [node name="nuke_spawn_line" parent="." instance=ExtResource("4_tqj8l")]
 
