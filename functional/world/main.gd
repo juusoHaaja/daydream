@@ -15,13 +15,13 @@ var population = 8240000000
 var money = 0;
 
 func _ready() -> void:
-	instance = self
-	canvas.main = self
-	nuke_man.main = self
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN) # hide cursor
+    instance = self
+    canvas.main = self
+    nuke_man.main = self
+    Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN) # hide cursor
 
 func update_kill_count():
-	killcount.update_count(kill_count)
+    killcount.update_count(kill_count)
 
 func update_money_count():
-	money_count.update_count(money)
+    money_count.update_count(money)
