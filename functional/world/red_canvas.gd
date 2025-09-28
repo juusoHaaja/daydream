@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
         grow()
         if points.size() > max_points:
             reverse_grow()
-    if points.size() <= 0:
+    if points.size() <= 0 and Main.instance.plane_manager.planes <= 0:
         Main.instance.set_end_screen()
     queue_redraw()
 

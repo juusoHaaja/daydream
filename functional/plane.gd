@@ -23,4 +23,5 @@ func _draw() -> void:
 func land():
     if not Main.instance.water_kill.is_pos_in_sea(target_position):
         Main.instance.canvas.add_point(target_position)
+    Main.instance.plane_manager.planes -= 1
     queue_free()

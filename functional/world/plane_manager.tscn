@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://6tff4mngj2ic"]
+[gd_scene load_steps=3 format=3 uid="uid://6tff4mngj2ic"]
 
 [ext_resource type="Script" uid="uid://nxxgcbegs1bh" path="res://functional/world/plane_manager.gd" id="1_hlvv0"]
+[ext_resource type="Texture2D" uid="uid://dulxnhyup6ufc" path="res://art/plane/Plane_icon.png" id="2_uv2d1"]
 
 [node name="PlaneManager" type="Node2D"]
 script = ExtResource("1_hlvv0")
@@ -9,18 +10,46 @@ script = ExtResource("1_hlvv0")
 position = Vector2(408, 292)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+rotation = 0.6702064
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_uv2d1")
 
 [node name="Node2D2" type="Node2D" parent="."]
 position = Vector2(1439, 714)
 
+[node name="Sprite2D" type="Sprite2D" parent="Node2D2"]
+rotation = 0.6702064
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_uv2d1")
+
 [node name="Node2D3" type="Node2D" parent="."]
 position = Vector2(780, 265)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D3"]
+rotation = 0.6702064
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_uv2d1")
 
 [node name="Node2D4" type="Node2D" parent="."]
 position = Vector2(1234, 345)
 
+[node name="Sprite2D" type="Sprite2D" parent="Node2D4"]
+rotation = 0.6702064
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_uv2d1")
+
 [node name="Node2D5" type="Node2D" parent="."]
 position = Vector2(863, 704)
 
+[node name="Sprite2D" type="Sprite2D" parent="Node2D5"]
+rotation = 0.6702064
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_uv2d1")
+
 [node name="Node2D6" type="Node2D" parent="."]
 position = Vector2(492, 716)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D6"]
+rotation = 0.6702064
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_uv2d1")

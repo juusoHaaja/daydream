@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://xgqqyxlug4nc"]
+[gd_scene load_steps=3 format=3 uid="uid://xgqqyxlug4nc"]
 
 [ext_resource type="Script" uid="uid://c5s7a41oyjkvf" path="res://functional/ui/main_menu.gd" id="1_7sxn8"]
+[ext_resource type="Texture2D" uid="uid://eq5fra1rkaom" path="res://art/start_screen.webp" id="2_dg478"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_7sxn8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1600.0
+offset_bottom = 900.0
+texture = ExtResource("2_dg478")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 8

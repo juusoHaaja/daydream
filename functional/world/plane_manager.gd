@@ -1,5 +1,7 @@
 extends Node2D
 
+var planes = 0;
+
 var airports = []
 @export var plane_prefab: PackedScene
 
@@ -13,4 +15,5 @@ func spawn_plane(start_pos):
     plane.global_position = start_pos
     var target_pos = airports[randi() % airports.size()]
     plane.target_position = target_pos
+    planes +=1
     add_child(plane)
