@@ -54,13 +54,13 @@ func wrap_point(point: Vector2) -> Vector2:
 
 
 func grow():
-    var i = randi_range(0, points.size()-1)
+    var i = randi_range(0, points.size() - 1)
     var p: Vector2 = points[i]
     if randi_range(0, 100) == 69:
         Main.instance.plane_manager.spawn_plane(p)
         return
 
-    var new_p = p+(p-centroid+Vector2.RIGHT).normalized().rotated(randf_range(-1.0, 1.0))*25
+    var new_p = p + (p - centroid + Vector2.RIGHT).normalized().rotated(randf_range(-1.0, 1.0)) * 25
     if main.water_kill.is_pos_in_sea(wrap_point(new_p)):
         return
     add_point(new_p)
@@ -69,7 +69,7 @@ func reverse_grow():
     Main.instance.population -= 10000
     Main.instance.kill_count += 10000
     Main.instance.update_kill_count()
-    var i = randi_range(0, points.size()-1)
+    var i = randi_range(0, points.size() - 1)
     points.remove_at(i)
     radie.remove_at(i)
 
@@ -81,9 +81,9 @@ func set_centroid():
     centroid = sum / points.size()
 
 func eliminate(pos, radius):
-    var length = points.size() -1;
-    for i in range(length+1):
-        var index = length-i;
+    var length = points.size() - 1;
+    for i in range(length + 1):
+        var index = length - i;
         var p = wrap_point(points[index])
         if is_point_overlap(pos, radius, p):
             points.remove_at(index)

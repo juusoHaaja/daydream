@@ -39,7 +39,6 @@ text = "Radical Cure"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 46
 text = "PLAY"
